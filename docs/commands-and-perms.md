@@ -1,4 +1,5 @@
 # Commands and Permissions
+
 </br>
 
 ## Commands
@@ -34,7 +35,6 @@
 
 ### grantx.grants.revoke
 **Description:** Ability to revoke grants in /grants.
-
 </br>
 
 ## Custom Permissions
