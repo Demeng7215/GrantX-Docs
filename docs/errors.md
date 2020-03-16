@@ -67,7 +67,7 @@
 **Fix:** Ignore or fix internet.
 
 ## Code 13
-**Description:** Same thing as error 13, but whilst connecting to authentication servers. </br>
+**Description:** Same thing as error 12, but whilst connecting to authentication servers. </br>
 
 ## Code 14, 15, 16, 17
 **Description:** You either know why this happened or you don't. </br>
