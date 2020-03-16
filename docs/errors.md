@@ -49,11 +49,33 @@
 **Fix:** Restart the server or (if applicable) fix permissions so that GrantX can access the files.
 
 ## Code 9
-**Description:** Online player returned offline.
+**Description:** Online player returned offline. </br>
 **Cause:** Someone logged out, crashed, or could not be found unexpectedly. </br>
 **Effect:** Nothing. Can be ignored. </br>
 **Fix:** Ignore.
 
 ## Code 10
+**Description:** Failed to connect to MySQL. </br>
+**Cause:** GrantX couldn't access your database. Incorrect credentials? Permissions issue? </br>
+**Effect:** Plugin will be disabled. </br>
+**Fix:** Fix your database or try again later.
 
+## Code 11
+**Description:** Failed to save data. </br>
+**Cause:** Your data storage system is experiencing an issue. Could be a connection issue for SQL? Missing file for flat? </br>
+**Effect:** Data will not save, or will save in a corrupt format. </br>
+**Fix:** Fix your database if using MySQL and make sure your data.yml is fine.
 
+## Code 12
+**Description:** Failed to establish connection. </br>
+**Cause:** Invalid/blocked internet connection whilst performing external tasks (checking for updates). </br>
+**Effect:** Nothing, just no update notifications. </br>
+**Fix:** Ignore or fix internet.
+
+## Code 13
+**Description:** Same thing as error 13, but whilst connecting to authentication servers. </br>
+
+## Code 14, 15, 16, 17
+**Description:** You either know why this happened or you don't. </br>
+**Effect:** Plugin will be disabled. </br>
+**Fix:** If you don't know why this happened, contact Demeng7215.
