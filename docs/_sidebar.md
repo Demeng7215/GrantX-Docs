@@ -1,3 +1,2 @@
 * [Home](/)
-* Getting Started
-  * [Installation](getting-started/installation.md)
+* [Installation](installation.md)
