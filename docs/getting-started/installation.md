@@ -1,7 +1,4 @@
-# Getting Started
-Get GrantX up and running fast!
-
-## Installation
+# Installation
 1. Download GrantX [here](https://demeng7215.com/grantx) after purchasing if you haven't already.
 2. Move the JAR file to your server's "plugins" directory.
 3. Install [Vault](https://dev.bukkit.org/projects/vault) and a permissions plugin supporting vault, such as [LuckPerms](https://www.spigotmc.org/resources/28140/) (recommended) or [PermissionsEx](https://dev.bukkit.org/projects/permissionsex) and configure your ranks/groups in that plugin if you haven't already.
