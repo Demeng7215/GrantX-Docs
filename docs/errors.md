@@ -18,12 +18,6 @@
 **Effect:** Plugin will disable.</br>
 **Fix:** Install Vault and a supported permissions plugin or fix the plugins, and restart.
 
-## Code 4
-**Description:** Error loading custom menu. </br>
-**Cause:** One or more of your configuration files are outdated for your current GrantX version. </br>
-**Effect:** Plugin will disable.</br>
-**Fix:** Delete + restart to get new defaults or compare the new config to the old and make changes accordingly.
-
 ## Code 6
 **Description:** Failed to send title. </br>
 **Cause:** Unsupported server version or corrupt server JAR. </br>
