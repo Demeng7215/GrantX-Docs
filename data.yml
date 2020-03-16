@@ -1,0 +1,27 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ________                     __    ____  ___  #
+#  /  _____/___________    _____/  |_  \   \/  /  #
+# /   \  __\_  __ \__  \  /    \   __\  \     /   #
+# \    \_\  \  | \// __ \|   |  \  |    /     \   #
+#  \______  /__|  (____  /___|  /__|   /___/\  \  #
+#         \/           \/     \/             \_/  #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# |
+# ---------------------------------------------------------------------------------------
+# Welcome to the official data file for GrantX!
+# This is where you can configure how data is stored as well as see current data.
+# If you are unsure of what something does, see here: []
+# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# Thank you for using GrantX!
+# ---------------------------------------------------------------------------------------
+
+mysql:
+  # Keep disabled. MySQL is not supported yet!
+  enabled: false
+  host: "none"
+  port: "none"
+  database: "none"
+  user: "none"
+  password: "none"
+
+grants: []

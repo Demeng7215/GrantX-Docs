@@ -1,0 +1,103 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ________                     __    ____  ___  #
+#  /  _____/___________    _____/  |_  \   \/  /  #
+# /   \  __\_  __ \__  \  /    \   __\  \     /   #
+# \    \_\  \  | \// __ \|   |  \  |    /     \   #
+#  \______  /__|  (____  /___|  /__|   /___/\  \  #
+#         \/           \/     \/             \_/  #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# |
+# ---------------------------------------------------------------------------------------
+# Welcome to the official settings file for GrantX!
+# This is where you can change how GrantX functions.
+# If you are unsure of what something does, see here: []
+# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# Thank you for using GrantX!
+# ---------------------------------------------------------------------------------------
+
+# Do not change this value.
+config-version: 1
+
+# If GrantX should check for updates and new releases.
+check-for-updates: true
+
+# The number of seconds between each grants save.
+# Setting this to a small number could result in lag!
+# Setting this to a large number could result in data loss in an event of a server crash!
+save-interval: 180
+
+# The list of commands that will be executed on rank grant, expiry, and revocation.
+# Do not include the / sign in front of the command.
+# Dependent on your permissions plugin. NOTHING WILL HAPPEN on these events if your commands are incorrect!
+# You can use the following placeholders:
+# %id% - The ID of the grant.
+# %time% - The date of when the grant was issued.
+# %target% - The username of the player receiving the rank.
+# %target-uuid% - The UUID of the player receiving the rank.
+# %staff% - The username of the staff member granting the rank.
+# %staff-uuid% - The UUID of the staff member granting the rank.
+# %rank% - The name of the rank.
+# %group% - The group name of the rank.
+# %duration% - The duration of the grant, in words.
+# %seconds% - The duration of the grant, in seconds.
+# %expiry% - The date and time of grant expiry.
+# %reason% - The reason for the grant.
+# %next-best-group% - The next best rank's group name after the current one.
+commands-executed-on:
+  grant:
+    - "Not Set"
+  expiry:
+    - "Not Set"
+  # Special placeholders for these commands:
+  # %revoker% - The name of the staff who revoked the grant.
+  # %revoker-uuid% - The UUID of the staff who revoked the grant.
+  revoke:
+    - "Not Set"
+
+# The keywords that will make GrantX return the staff member to the duration/reason selection GUI if said in chat.
+# This is used when the "custom duration/reason" button is selected.
+back-keywords:
+  - "back"
+  - "return"
+  - "stop"
+  - "cancel"
+  - "N/A"
+  - "nothing"
+  - "none"
+  - "quit"
+  - "exit"
+
+# How the messages logged in the grant log files should be formatted.
+# You can use the following placeholders:
+# %id% - The ID of the grant.
+# %time% - The date of when the grant was issued.
+# %target% - The username of the player receiving the rank.
+# %target-uuid% - The UUID of the player receiving the rank.
+# %staff% - The username of the staff member granting the rank.
+# %staff-uuid% - The UUID of the staff member granting the rank.
+# %rank% - The name of the rank.
+# %group% - The group name of the rank.
+# %duration% - The duration of the grant, in words.
+# %seconds% - The duration of the grant, in seconds.
+# %expiry% - The date and time of grant expiry.
+# %reason% - The reason for the grant.
+# %next-best-group% - The next best rank's group name after the current one.
+log-format:
+  # The format when a new grant is issued.
+  grant: "Player %target% was granted the %rank% rank for a period of %duration% for the reason %reason% by staff member %staff%."
+  # The format when a grant expires by time.
+  expiry: "Player %target%'s %rank% rank grant for the reason %reason% by staff member %staff% has expired after a period of %duration%."
+  # The format when a grant has been manually revoked by a staff member.
+  # Special placeholders:
+  # %revoker% - The username of the staff member who revoked the grant.
+  # %revoker-uuid% - The UUID of the staff member who revoked the grant.
+  revoke: "Player %target%'s %rank% rank grant for a period of %duration% for the reason %reason% by staff member %staff% was revoked by staff member %revoker%."
+
+# Should placeholders' colors be stripped (reset)?
+strip-placeholder-colors:
+  # For %rank% placeholder.
+  ranks: true
+  # For %duration% placeholder.
+  durations: true
+  # For %reason% placeholder.
+  reasons: true

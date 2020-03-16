@@ -1,0 +1,40 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ________                     __    ____  ___  #
+#  /  _____/___________    _____/  |_  \   \/  /  #
+# /   \  __\_  __ \__  \  /    \   __\  \     /   #
+# \    \_\  \  | \// __ \|   |  \  |    /     \   #
+#  \______  /__|  (____  /___|  /__|   /___/\  \  #
+#         \/           \/     \/             \_/  #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# |
+# ---------------------------------------------------------------------------------------
+# Welcome to the official ranks file for GrantX!
+# This is where you can change how ranks appear in the GUIs.
+# If you are unsure of what something does, see here: []
+# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# Thank you for using GrantX!
+# ---------------------------------------------------------------------------------------
+
+# Do not change this value.
+config-version: 1
+
+# The list of ranks in the GUI.
+ranks:
+  # This is an example rank. All other ranks should copy this template.
+  ExampleRank:
+    # FOR DESIGN TYPE 3 AND DESIGN TYPE 3 ONLY,
+    # Starts at 1, goes up to the GUI's last slot.
+    # Set to -1 to not show this rank.
+    slot: 1
+    # The display name of this rank in the GUIs and in chat messages.
+    display-name: "&c&lExample Rank"
+    # The name of the rank in your permissions plugin.
+    actual-group-name: "example"
+    # The material that represents this rank in the GUIs.
+    material-representation: "WHITE_WOOL"
+    # The rank's priority in the GUI. The higher the priority, the earlier it shows in the rank selection GUI.
+    priority-in-gui: 100
+    # If this rank is grantable or just for aesthetics in the GUI.
+    grantable: true
+    # The permission required to grant this rank.
+    permission-required-to-grant: "grant.examplerank"
