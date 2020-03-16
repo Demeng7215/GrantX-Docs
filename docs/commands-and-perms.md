@@ -1,7 +1,5 @@
 # Commands and Permissions
 
-</br>
-
 ## Commands
 ### /grantx
 **Description:** Displays plugin information.</br>
