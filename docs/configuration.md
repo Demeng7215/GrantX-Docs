@@ -1,4 +1,6 @@
 # Configuration
+
+## Defaults
 All of GrantX's configuration files are clearly labelled and explained with comments. If you are experiencing deleted comments, please click on of these links to view the latest configuration defaults.
 
 * [settings.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/settings.yml)
@@ -6,3 +8,6 @@ All of GrantX's configuration files are clearly labelled and explained with comm
 * [style.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/style.yml)
 * [ranks.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/ranks.yml)
 * [data.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/data.yml)
+
+## Materials
+Here is a list of all materials you can use for your GUI buttons, rank icons, etc., regardless of your server version. Disregard the text inside the (brackets) and use the exact capital letters shown in the document. MAKE SURE THE ITEM ACTUALLY EXISTS IN YOUR SERVER VERSION! [*Click here to view materials.*](https://raw.githubusercontent.com/Demeng7215/GrantX-Docs/master/materials.txt)
