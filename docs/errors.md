@@ -12,12 +12,6 @@
 **Effect:** Plugin will disable.</br>
 **Fix:** Delete + restart to get new defaults or compare the new config to the old and make changes accordingly.
 
-## Code 2
-**Description:** Configuration files are outdated. </br>
-**Cause:** One or more of your configuration files are outdated for your current GrantX version. </br>
-**Effect:** Plugin will disable.</br>
-**Fix:** Delete + restart to get new defaults or compare the new config to the old and make changes accordingly.
-
 ## Code 3
 **Description:** Failed to hook into Vault. </br>
 **Cause:** Vault was not installed/enabled or your permissions plugin is non-existing/disabled.</br>
