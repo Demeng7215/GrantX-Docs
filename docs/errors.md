@@ -18,6 +18,12 @@
 **Effect:** Plugin will disable.</br>
 **Fix:** Install Vault and a supported permissions plugin or fix the plugins, and restart.
 
+## Code 4
+**Description:** Grant/expiry/revoke commands not set. </br>
+**Cause:** The "commands-executed-on" section in your settings.yml is not set up.</br>
+**Effect:** Plugin will disable.</br>
+**Fix:** Install a stable permissions plugin such as LuckPerms, UltraPermissions, or PermissionsEx and restart, or set up the commands manually and restart.
+
 ## Code 6
 **Description:** Failed to send title. </br>
 **Cause:** Unsupported server version or corrupt server JAR. </br>
