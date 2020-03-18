@@ -16,7 +16,7 @@
 4. Restart your server.
 5. Several files will be generated, including a logs folder, settings.yml, messages.yml, style.yml, ranks.yml, and data.yml.
 6. Go to ranks.yml and follow the ExampleRank format to add your own ranks.
-7. Go to settings.yml's "commands-executed-on" section and set everything up. Comments explain what to do.
+7. Go to settings.yml's "commands-executed-on" section and set everything up. Comments explain what to do. These may be set up automatically already for you depending on what permissions plugin you are using.
 8. Customize anything else (optional).
 9. Restart or run the */grantx reload* command to activate your changes.
 10. Enjoy! Need more help? Join our [Discord](https://demeng7215.com/grantx).
