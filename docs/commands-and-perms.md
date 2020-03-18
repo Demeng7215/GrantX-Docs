@@ -16,6 +16,10 @@
 **Description:** Forcibly saves grants data.</br>
 **Permission:** grantx.save
 
+### /grantx import
+**Description:** Imports ranks from your permissions plugin into GrantX's ranks.yml.</br>
+**Permission:** grantx.import
+
 ### /grant {player}
 **Description:** Grants the specified player a rank.</br>
 **Permissions:** grantx.grant</br>
