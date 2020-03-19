@@ -69,4 +69,10 @@
 ## Code 14, 15, 16, 17
 **Description:** You either know why this happened or you don't. </br>
 **Effect:** Plugin will be disabled. </br>
-**Fix:** If you don't know why this happened, contact Demeng7215.
+**Fix:** If you don't know why this happened, contact Demeng7215 ASAP.
+
+## Code 18
+**Description:** Invalid license key.</br>
+**Cause:** Your license key has expired, been revoked, or is no longer valid.</br>
+**Effect:** Plugin will be disabled. </br>
+**Fix:** If you don't know why this happened, contact Demeng7215 ASAP.
