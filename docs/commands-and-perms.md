@@ -29,6 +29,7 @@
 ### /grants {player}
 **Description:** View the grant history of the player.</br>
 **Permissions:** grantx.grants.view</br>
+**Aliases:** /granthistory {player}
 **Parameters:**
 - *player* : Any player that has joined the world before.
 </br>
