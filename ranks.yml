@@ -15,7 +15,6 @@
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-# Do not change this value.
 config-version: 1
 
 # The list of ranks in the GUI.
@@ -25,14 +24,14 @@ ranks:
     # FOR DESIGN TYPE 3 AND DESIGN TYPE 3 ONLY,
     # Starts at 1, goes up to the GUI's last slot.
     # Set to -1 to not show this rank.
-    slot: 1
+    slot: -1
     # The display name of this rank in the GUIs and in chat messages.
     display-name: "&c&lExample Rank"
     # The name of the rank in your permissions plugin.
     actual-group-name: "example"
     # The material that represents this rank in the GUIs.
     material-representation: "WHITE_WOOL"
-    # The rank's priority in the GUI. The higher the priority, the earlier it shows in the rank selection GUI.
+    # The rank's priority in the GUI. The lower the priority, the earlier it shows in the rank selection GUI.
     priority-in-gui: 100
     # If this rank is grantable or just for aesthetics in the GUI.
     grantable: true

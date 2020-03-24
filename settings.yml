@@ -15,8 +15,7 @@
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-# Do not change this value.
-config-version: 1
+config-version: 2
 
 # If GrantX should check for updates and new releases.
 check-for-updates: true
@@ -53,6 +52,19 @@ commands-executed-on:
   # %revoker-uuid% - The UUID of the staff who revoked the grant.
   revoke:
     - "Not Set"
+
+# The default rank on join and the fallback rank when %next-best-group% is requested but there isn't one.
+default-grant:
+  # Should this feature be enabled?
+  enabled: false
+  # The identifier of the rank in ranks.yml.
+  rank: "Member"
+  # The identifier of the duration in style.yml.
+  duration: "permanent"
+  # The identifier of the reason of the grant in style.yml.
+  reason: "no-reason"
+  # The UUID of the staff member. Must have joined the server before.
+  staff: "ca19af04-a156-482e-a35d-3f5f434975b5"
 
 # The keywords that will make GrantX return the staff member to the duration/reason selection GUI if said in chat.
 # This is used when the "custom duration/reason" button is selected.

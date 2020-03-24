@@ -15,7 +15,6 @@
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-# Do not change this value.
 config-version: 1
 
 # The material that all empty slots will be filled with.
@@ -444,7 +443,7 @@ grants:
   # 3- No control panel or separator. No pages either- you are limited to the number of slots in the GUI.
   design-type: 1
   # You can use %target% for the player name and %page% for the current page.
-  title: "&1Grants of %target% &8(Page %page%)"
+  title: "&1Grants: %target% &8(%page%)"
   slots: 18
   # The range of slots which are dedicated to grants.
   # Make sure they don't collide with separator or page controls (if applicable)!

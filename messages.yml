@@ -15,19 +15,31 @@
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-# Do not change this value.
-config-version: 1
+config-version: 3
 
 # The prefix that will appear in most of GrantX's messages.
 prefix: "&8[&9GrantX&8] &r"
 
-# This is the array of messages that will be send when the help menu is requested.
+# This is the array of messages that will be sent when plugin information is requested.
+# This message will be centered for players and normal for console.
+# Prefix will not be used in this message.
+information:
+  - "&9&m-----------------------------------------------------"
+  - "&b&lRunning GrantX by Demeng7215"
+  - "&bLink: &fhttps://demeng7215.com/grantx"
+  - "&bType &f/grantx help &bfor a list of commands."
+  - "&bType &f/grant <player> &bto grant a rank."
+  - "&9&m-----------------------------------------------------"
+
+# This is the array of messages that will be sent when the help menu is requested.
+# Prefix will not be used in this message.
 help-menu:
   - "&9&m-----------------&r &9&lGrantX Commands&r &9&m------------------"
   - "&b/grantx &7- &fDisplays plugin info and some basic commands."
   - "&b/grantx help &7- &fShows a list of GrantX commands."
   - "&b/grantx reload &7- &fReloads all configuration files."
   - "&b/grantx save &7- &fForcibly save data to file."
+  - "&b/grantx import &7- &fImport ranks from your permissions plugin."
   - "&b/grant <player> &7- &fGrant player a rank or permission."
   - "&b/grants <player> &7- &fView player's grants and revoke them."
   - "&9&m-----------------------------------------------------"
@@ -148,3 +160,9 @@ revoke-cancelled: "&bGrant revocation has been successfully cancelled."
 # %revoker-uuid% - The UUID of the staff who revoked the grant.
 # %next-best-group% - The next best rank's group name after the current one.
 grant-revoked: "&bYou have revoked &f%target%&b's &f%rank% &brank."
+
+# The message that will be sent if "confirm" is not added after the /grantx import command.
+import-not-confirmed: "&bImporting resets your current ranks.yml. Make a backup is necessary and run &f/grantx import confirm&b."
+
+# This message will be sent when ranks have been successfully imported into the ranks.yml from your permissions plugin.
+ranks-imported: "&bYour ranks have been successfully imported."
