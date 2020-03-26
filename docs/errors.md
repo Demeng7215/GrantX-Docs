@@ -24,6 +24,12 @@
 **Effect:** Plugin will disable.</br>
 **Fix:** Install a stable permissions plugin such as LuckPerms, UltraPermissions, or PermissionsEx and restart, or set up the commands manually and restart.
 
+## Code 5
+**Description:** Invalid material name.</br>
+**Cause:** A material representation or button icon in ranks.yml or style.yml is invalid. </br>
+**Effect:** GUI will not be shown, item will be missing, and/or additional errors.</br>
+**Fix:** Check the configuration section of the wiki to see a list of valid material names. Make sure all your materials are available on your server version.
+
 ## Code 6
 **Description:** Failed to send title. </br>
 **Cause:** Unsupported server version or corrupt server JAR. </br>
@@ -63,8 +69,14 @@
 ## Code 12
 **Description:** Failed to establish connection. </br>
 **Cause:** Invalid/blocked internet connection whilst performing external tasks (checking for updates). </br>
-**Effect:** Nothing, just no update notifications. </br>
-**Fix:** Ignore or fix internet.
+**Effect:** Nothing, just no features such as update notifications or metrics. On some versions, the plugin may disable. </br>
+**Fix:** Ignore (if possible) or fix internet.
+
+## Code 13
+**Description:** Rank, duration, or reason not found. </br>
+**Cause:** A rank, duration, or reason has has been used before to grant could no longer be found in ranks.yml or style.yml. </br>
+**Effect:** Plugin will disable.</br>
+**Fix:** Add the rank/duration/reason back to ranks.yml or style.yml and set the slot to -1 to create the entity but not display it in the GUI.
 
 ## Code 14, 15, 16, 17
 **Description:** You either know why this happened or you don't. </br>
