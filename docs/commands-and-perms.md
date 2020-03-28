@@ -32,6 +32,15 @@
 **Aliases:** /granthistory {player}
 **Parameters:**
 - *player* : Any player that has joined the world before.
+
+### /forcegrant {player} {rank} {duration} {reason}
+**Description:** Forcibly grant a player without going through the GUI or confirming.</br>
+**Permissions:** grantx.forcegrant</br>
+**Parameters:**
+- *player* : Any player that has joined the world before.
+- *rank* : The ID/name of a rank, must exist in ranks.yml.
+- *duration* : Any custom duration. For example, "2d3m".
+- *reason* : Any custom reason. For example, "This is a test".
 </br>
 
 ## Standalone Permissions
