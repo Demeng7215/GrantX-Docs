@@ -15,7 +15,7 @@
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 3
+config-version: 4
 
 # The prefix that will appear in most of GrantX's messages.
 prefix: "&8[&9GrantX&8] &r"
@@ -42,6 +42,7 @@ help-menu:
   - "&b/grantx import &7- &fImport ranks from your permissions plugin."
   - "&b/grant <player> &7- &fGrant player a rank or permission."
   - "&b/grants <player> &7- &fView player's grants and revoke them."
+  - "&b/forcegrant <player> <rank> <time> <reason> &7- &fForcibly grant."
   - "&9&m-----------------------------------------------------"
 
 # The message that is sent when the console tries to run a players-only command.
@@ -57,7 +58,15 @@ no-permission: "&bYou must have the &f%permission% &bpermission to do that."
 incorrect-usage: "&bIncorrect usage! Usage: &f%usage%"
 
 # This message will be sent if someone tries to interact with a non-existing player.
+# Use %target% for the target's name.
 invalid-player: "&f%target% &bhas never joined this server before."
+
+# The message that is sent when a user tries to interact with a protected user.
+# Use %target% for the target's name.
+protected-player: "&bYou cannot interact with that user."
+
+# This message will be sent if an invalid or non-existing rank attempts to be force-granted.
+invalid-rank: "&bPlease specify a valid rank name."
 
 # The message that will be sent when all config files have been reloaded.
 successfully-reloaded: "&bAll configuration files reloaded. Data was NOT reloaded!"
@@ -76,7 +85,7 @@ request-custom-duration: "&bPlease type your custom duration in chat."
 request-custom-duration-title: "&9Enter a Duration;&bType &fback &bto return."
 
 # The message that is sent if a staff member provides an illegal custom duration like 'randomtext101'.
-invalid-custom-duration-format: "&bThat is not a valid duration. Type &fback &bto cancel."
+invalid-custom-duration-format: "&bThat is not a valid duration."
 
 # This message will be sent when a player chooses to enter a custom reason.
 request-custom-reason: "&bPlease type your custom reason in chat."
@@ -121,12 +130,12 @@ notifications:
   # The messages that are sent to the staff member who granted the rank.
   staff:
     activation:
-      - "&7&m-----------------------------------------------------"
+      - "&8&m-----------------------------------------------------"
       - "&b&lYou have granted &f&l%target% &b&lthe &f&l%rank% &b&lrank!"
       - "&3Duration: &7%duration%"
       - "&3Expiry: &7%expiry%"
       - "&3Reason: &7%reason%"
-      - "&7&m-----------------------------------------------------"
+      - "&8&m-----------------------------------------------------"
     expiry:
       - "none"
     # Special placeholders only for this notification:

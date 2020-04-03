@@ -21,10 +21,10 @@ config-version: 1
 ranks:
   # This is an example rank. All other ranks should copy this template.
   ExampleRank:
-    # FOR DESIGN TYPE 3 AND DESIGN TYPE 3 ONLY,
     # Starts at 1, goes up to the GUI's last slot.
     # Set to -1 to not show this rank.
-    slot: -1
+    # Set this to 0 for design type 1 and 2, to allow paging.
+    slot: 0
     # The display name of this rank in the GUIs and in chat messages.
     display-name: "&c&lExample Rank"
     # The name of the rank in your permissions plugin.
