@@ -7,6 +7,8 @@ All of GrantX's configuration files are clearly labelled and explained with comm
 * [messages.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/messages.yml)
 * [style.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/style.yml)
 * [ranks.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/ranks.yml)
+* [durations.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/durations.yml)
+* [reasons.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/reasons.yml)
 * [data.yml](https://github.com/Demeng7215/GrantX-Docs/blob/master/data.yml)
 
 ## Materials
