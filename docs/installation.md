@@ -14,9 +14,10 @@
 2. Move the JAR file to your server's "plugins" directory.
 3. Install all dependencies and configure your groups in your permissions plugin if you haven't already.
 4. Restart your server.
-5. Several files will be generated, including a logs folder, settings.yml, messages.yml, style.yml, ranks.yml, and data.yml.
+5. Several files will be generated, including a logs folder, settings.yml, messages.yml, style.yml, ranks.yml, durations.yml, reasons.yml, and data.yml.
 6. Go to ranks.yml and follow the ExampleRank format to add your own ranks.
-7. Go to settings.yml's "commands-executed-on" section and set everything up. Comments explain what to do. These may be set up automatically already for you depending on what permissions plugin you are using.
+7. Go to settings.yml's "commands-executed-on" section and set everything up. Comments explain what to do.
+8. If you DID NOT buy from SpigotMC, you must set the "license-key" field in settings.yml. Join our [Discord](https://demeng7215.com/discord) and create a ticket if you don't have a key.
 8. Customize anything else (optional).
 9. Restart or run the */grantx reload* command to activate your changes.
-10. Enjoy! Need more help? Join our [Discord](https://demeng7215.com/grantx).
+10. Enjoy! Need more help? Join our [Discord](https://demeng7215.com/discord).
