@@ -18,6 +18,6 @@
 6. Go to ranks.yml and follow the ExampleRank format to add your own ranks.
 7. Go to settings.yml's "commands-executed-on" section and set everything up. Comments explain what to do.
 8. If you DID NOT buy from SpigotMC, you must set the "license-key" field in settings.yml. Join our [Discord](https://demeng7215.com/discord) and create a ticket if you don't have a key.
-8. Customize anything else (optional).
-9. Restart or run the */grantx reload* command to activate your changes.
-10. Enjoy! Need more help? Join our [Discord](https://demeng7215.com/discord).
+9. Customize anything else (optional).
+10. Restart or run the */grantx reload* command to activate your changes.
+11. Enjoy! Need more help? Join our [Discord](https://demeng7215.com/discord).
