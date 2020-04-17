@@ -13,78 +13,84 @@
 **Fix:** Delete + restart to get new defaults or compare the new config to the old and make changes accordingly.
 
 ## Code 3
-**Description:** Failed to hook into Vault. </br>
-**Cause:** Vault was not installed/enabled or your permissions plugin is non-existing/disabled.</br>
+**Description:** Log files could not be created. </br>
+**Cause:** The log file for the session could not be created. </br>
 **Effect:** Plugin will disable.</br>
-**Fix:** Install Vault and a supported permissions plugin or fix the plugins, and restart.
+**Fix:** Make sure file permissions on your server allow GrantX to access its logs folder and create writeable + readable files.
 
 ## Code 4
-**Description:** Grant/expiry/revoke commands not set. </br>
-**Cause:** The "commands-executed-on" section in your settings.yml is not set up.</br>
-**Effect:** Plugin will disable.</br>
-**Fix:** Install a stable permissions plugin such as LuckPerms, UltraPermissions, or PermissionsEx and restart, or set up the commands manually and restart.
-
-## Code 5
-**Description:** Invalid material name.</br>
-**Cause:** A material representation or button icon in ranks.yml or style.yml is invalid. </br>
-**Effect:** GUI will not be shown, item will be missing, and/or additional errors.</br>
-**Fix:** Check the configuration section of the wiki to see a list of valid material names. Make sure all your materials are available on your server version.
-
-## Code 6
-**Description:** Failed to send title. </br>
-**Cause:** Unsupported server version or corrupt server JAR. </br>
-**Effect:** Title will not be shown, or will be partially shown to the player.</br>
-**Fix:** Contact Demeng7215 with the stack trace (error).
-
-## Code 7
-**Description:** Missing configuration values. </br>
-**Cause:** Something is missing in one of your configuration files. Perhaps you mispelled a key or deleted one by accident? </br>
-**Effect:** Plugin breaks. Things don't function like they supposed to, messages are deformed, errors spamming everywhere.</br>
-**Fix:** Undo your changes, fix your errors, or reset configurations back to defaults.
-
-## Code 8
-**Description:** Failed to log information. </br>
-**Cause:** One of your log files have been deleted or cannot be accessed. </br>
-**Effect:** Information will not be logged. </br>
-**Fix:** Restart the server or (if applicable) fix permissions so that GrantX can access the files.
-
-## Code 9
-**Description:** Online player returned offline. </br>
-**Cause:** Someone logged out, crashed, or could not be found unexpectedly. </br>
-**Effect:** Nothing. Can be ignored. </br>
-**Fix:** Ignore.
-
-## Code 10
-**Description:** Failed to connect to MySQL. </br>
-**Cause:** GrantX couldn't access your database. Incorrect credentials? Permissions issue? </br>
-**Effect:** Plugin will be disabled. </br>
-**Fix:** Fix your database or try again later.
-
-## Code 11
 **Description:** Failed to save data. </br>
 **Cause:** Your data storage system is experiencing an issue. Could be a connection issue for SQL? Missing file for flat? </br>
 **Effect:** Data will not save, or will save in a corrupt format. </br>
 **Fix:** Fix your database if using MySQL and make sure your data.yml is fine.
 
-## Code 12
-**Description:** Failed to establish connection. </br>
-**Cause:** Invalid/blocked internet connection whilst performing external tasks (checking for updates). </br>
-**Effect:** Nothing, just no features such as update notifications or metrics. On some versions, the plugin may disable. </br>
-**Fix:** Ignore (if possible) or fix internet.
+## Code 5
+**Description:** Grant/expiry/revoke commands not set. </br>
+**Cause:** The "commands-executed-on" section in your settings.yml is not set up.</br>
+**Effect:** Plugin will disable.</br>
+**Fix:** Set up your permission plugin's group set/add/remove commands in settings.yml, in the commands-executed-on section.
 
-## Code 13
+## Code 6
+**Description:** Invalid material name.</br>
+**Cause:** A material representation or button icon in ranks.yml or style.yml is invalid. </br>
+**Effect:** GUI will not be shown, item will be missing, and/or additional errors.</br>
+**Fix:** Check the configuration section of the wiki to see a list of valid material names. Make sure all your materials are available on your server version.
+
+## Code 7
+**Description:** Failed to hook into Vault. </br>
+**Cause:** Vault was not installed/enabled or your permissions plugin is non-existing/disabled.</br>
+**Effect:** Plugin will disable.</br>
+**Fix:** Install Vault and a supported permissions plugin or fix the plugins, and restart.
+
+## Code 8
+**Description:** Invalid title format. </br>
+**Cause:** The custom title(s) you provided in messages.yml are invalid.</br>
+**Effect:** Title will not display.</br>
+**Fix:** Make sure the title and subtitle are split by a colon (:) like Title:Subtitle.
+
+## Code 9
+**Description:** Failed to send title. </br>
+**Cause:** Unsupported server version or corrupt server JAR. </br>
+**Effect:** Title will not be shown, or will be partially shown to the player.</br>
+**Fix:** Contact Demeng7215 with the stack trace (error).
+
+## Code 10
+**Description:** Failed to log information. </br>
+**Cause:** One of your log files have been deleted or cannot be accessed. </br>
+**Effect:** Information will not be logged. </br>
+**Fix:** Restart the server or (if applicable) fix permissions so that GrantX can access the files.
+
+## Code 11, 12, 13
 **Description:** Rank, duration, or reason not found. </br>
 **Cause:** A rank, duration, or reason has has been used before to grant could no longer be found in ranks.yml or style.yml. </br>
 **Effect:** Plugin will disable.</br>
-**Fix:** Add the rank/duration/reason back to ranks.yml or style.yml and set the slot to -1 to create the entity but not display it in the GUI.
+**Fix:** Add the rank/duration/reason back to ranks.yml, durations.yml, or reasons.yml and set the slot to -1 to create the entity but not display it in the GUI.
 
-## Code 14, 15, 16, 17
-**Description:** You either know why this happened or you don't. </br>
-**Effect:** Plugin will be disabled. </br>
-**Fix:** If you don't know why this happened, contact Demeng7215 ASAP.
+## Code 14
+**Description:** Failed to parse default duration. </br>
+**Cause:** The default duration you have provided in settings.yml could not be parsed properly. </br>
+**Effect:** Plugin will disable.</br>
+**Fix:** Make sure the custom duration is in proper format.
 
-## Code 18
+## Code 15
 **Description:** Invalid license key.</br>
 **Cause:** Your license key has expired, been revoked, or is no longer valid.</br>
 **Effect:** Plugin will be disabled. </br>
-**Fix:** If you don't know why this happened, contact Demeng7215 ASAP.
+**Fix:** If you don't know why this happened, contact Demeng ASAP.
+
+## Code 16, 17
+**Description:** Failed to establish connection with authentication servers. </br>
+**Cause:** Invalid/blocked internet connection whilst performing security checks. </br>
+**Effect:** Plugin will disable or keep running depending on the situation. </br>
+**Fix:** Ignore (if possible) or fix internet.
+
+## Code 18
+**Description:** Your plugin/file/account/server has been blacklisted from using GrantX. </br>
+**Effect:** Plugin will be disabled. </br>
+**Fix:** Usually re-downloading will fix the issue, but if it doesn't, contact Demeng.
+
+## Code 19
+**Description:** Failed to check for updates </br>
+**Cause:** Invalid/blocked internet connection whilst checking for updates </br>
+**Effect:** Nothing, the issue is ignored. </br>
+**Fix:** Ignore (not recommended) or fix internet.
