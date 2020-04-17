@@ -10,21 +10,20 @@
 # ---------------------------------------------------------------------------------------
 # Welcome to the official styling file for GrantX!
 # This is where you can change how GrantX's GUIs appear in-game.
-# If you are unsure of what something does, see here: []
+# If you are unsure of what something does: https://demeng7215.com/grantx-docs
 # Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 1
-
-# The material that all empty slots will be filled with.
-background-material: "GRAY_STAINED_GLASS_PANE"
+config-version: 2
 
 # The rank selection menu.
 rank-selection:
+  # The material that all empty slots will be filled with.
+  background-material: "GRAY_STAINED_GLASS_PANE"
   # The design of the rank selection GUI.
-  # 1-  Allows pages of ranks. There will be a control panel and a row of "separator" items that will split the ranks
-  #     from the controls (previous page, next page buttons).
+  # 1-  Allows pages of ranks. There will be a control panel and a row of "separator" items that will split the
+  #     ranks from the controls (previous page, next page buttons).
   # 2- Allows pages of ranks. There will be a control panel WITHOUT the separator items.
   # 3- No control panel or separator. No pages either- you are limited to the number of slots in the GUI.
   design-type: 1
@@ -32,14 +31,14 @@ rank-selection:
   # You can use the %target% placeholder for the person that the grant is being issued to.
   # The %page% placeholder is also available and represents the current page of ranks the staff member is on.
   # The %page% placeholder will simply be replaced with "1" if design-type (below) is set to mode 3.
-  title: "&1Select a Rank &8(Page %page%)"
+  title: "&1Select Grantable &8(%page%)"
   # The number of slots in the GUI.
   # Must be a multiple of 9, higher or equal to 9.
   # This includes the separator for design-type 1 and the page controls for design-type 1 and 2.
   slots: 45
   # The range of slots which are dedicated to ranks.
   # Make sure they don't collide with separator or page controls (if applicable)!
-  rank-slots:
+  usable-slots:
     from: 1
     to: 27
   # The separator between the menu's ranks and the page's controls.
@@ -85,310 +84,105 @@ rank-selection:
       - "&7There are no more pages to advance to."
   # The lore that will be used in every rank. You can use the following placeholders:
   # %target% - The name of the player that is receiving the rank.
-  # %rank% - The display name of the rank that the staff member is hovering over.
-  # %name% - The actual name of the rank that the staff member is hovering over.
-  # %group% - The name of the rank's actual group name.
+  # %type% - Rank or Permission.
+  # %rank% - The display name of the rank/perm that the staff member is hovering over.
+  # %real% - The actual name of the grantable (eg. rank group name or permission node).
+  # %description% - The description of the rank/perm.
   # %priority% - The priority of the rank.
-  # %grantable% - If this rank is grantable or not.
-  # %permission% - The permission required to grant this rank.
-  rank-lore:
+  # %dummy% - "Yes" or "No" depending on if you set dummy to true or false in ranks.yml.
+  # %permission% - The permission required to grant this rank/perm.
+  lore:
     - "&7&m-----------------------------------"
-    - "&aName: &f%rank%"
-    - "&aGroup: &f%group%"
+    - "&aName: &f%rank% (%type%)"
+    - "&aGroup/Node: &f%real%"
     - "&aPriority: &f%priority%"
-    - "&aGrantable: &f%grantable%"
+    - "&aDummy: &f%dummy%"
     - "&aPermission: &f%permission%"
     - "&7&m-----------------------------------"
     - "&b&lClick to grant &f&l%target% &b&lthe &f&l%rank% &b&lrank."
-  # The lore that will be used for the rank if they do not have permission to grant it or it is ungrantable.
-  # You can use the following placeholders:
-  # %target% - The name of the player that is receiving the rank.
-  # %rank% - The display name of the rank that the staff member is hovering over.
-  # %group% - The name of the rank's actual group name.
-  # %priority% - The priority of the rank.
-  # %grantable% - If this rank is grantable or not.
-  # %permission% - The permission required to grant this rank.
-  dummy-rank-lore:
+  # The lore that will be used for the rank if they do not have permission to grant it or it is dummy.
+  dummy-lore:
     - "&7&m-----------------------------------"
-    - "&6Name: &f%rank%"
-    - "&6Group: &f%group%"
+    - "&6Name: &f%rank% (%type%)"
+    - "&6Group/Node: &f%real%"
     - "&6Priority: &f%priority%"
-    - "&6Grantable: &f%grantable%"
+    - "&6Dummy: &f%dummy%"
     - "&6Permission: &f%permission%"
     - "&7&m-----------------------------------"
-    - "&c&lYou cannot grant &f&l%target% &c&lthe &f&l%rank% &c&lrank."
+    - "&c&lYou cannot grant this rank."
 
 
 
 # The duration selection menu.
 duration-selection:
+  background-material: "GRAY_STAINED_GLASS_PANE"
   # The title of the GUI. Use %target% for the target's username.
-  title: "&1Select a Duration"
+  title: "&1Select Duration"
   # The total number of slots in the GUI. Must be a multiple of 9, greater than 9, less than 54.
   slots: 18
-  # The lore that will be used if the staff member does not have permission to choose that duration.
+  # The lore that will be used if the staff member is able to choose this duration. Placeholders:
+  # %target% - The name of the player that is receiving the rank.
+  # %type% - Rank or Permission.
+  # %rank% - The display name of the rank or permission.
+  # %duration% - The display name of the duration.
+  # %expiry% - The expiry date of the grant.
+  # %description% - The description of the duration.
+  # %dummy% - "Yes" or "No" depending on if you set dummy to true or false in durations.yml.
+  # %permission% - The permission required to grant this duration.
+  lore:
+    - "&7&m-----------------------------------"
+    - "&a%description%"
+    - "&7&m-----------------------------------"
+    - "&b&lClick to select this grant duration."
+  # The lore that will be used if the staff member does not have permission to choose that duration or it is dummy.
+  # Same placeholders as above.
   dummy-lore:
     - "&7&m-----------------------------------"
     - "&6%description%"
     - "&7&m-----------------------------------"
     - "&c&lYou cannot select this duration."
-  # Duration presets. You can add/remove sections from this list to add/remove durations.
-  # When adding, make sure you have enough slots, or the plugin will throw an error.
-  durations:
-    # The button used to type a duration in chat / use a custom duration.
-    # For a button to be considered "custom duration", the configuration section name MUST be "custom-duration".
-    custom-duration:
-      # The amount of seconds this duration is worth. For example, 1 day would be 86400 seconds.
-      # Set this to -1 to read from custom duration (can be toggled later) or set as permanent.
-      seconds: -1
-      # The slot where this button is located, must be from 1 to the "slots" configuration value above.
-      slot: 3
-      # The material of the button.
-      material: "GLISTERING_MELON_SLICE"
-      # The display name of the button.
-      display-name: "&9Custom Duration"
-      # The description of this duration. This will be used in the %description% placeholder.
-      description: "Type a custom duration in chat."
-      # The lore of this button.
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      # The permission required to use this button.
-      permission-required: "grantx.duration.custom"
-    # The button used to grant permanently.
-    permanent:
-      # This is set to -1 to mark this as permanent.
-      seconds: -1
-      slot: 7
-      material: "REDSTONE_BLOCK"
-      display-name: "&9Permanent"
-      description: "This grant will be permanent."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.permanent"
-    10s:
-      seconds: 10
-      slot: 10
-      material: "WHITE_WOOL"
-      display-name: "&910 seconds"
-      description: "This grant will last for 10 seconds."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.10s"
-    5m:
-      seconds: 300
-      slot: 11
-      material: "ORANGE_WOOL"
-      display-name: "&95 minutes"
-      description: "This grant will last for 5 minutes."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.5m"
-    30m:
-      seconds: 1800
-      slot: 12
-      material: "MAGENTA_WOOL"
-      display-name: "&930 minutes"
-      description: "This grant will last for 30 minutes."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.30m"
-    1h:
-      seconds: 3600
-      slot: 13
-      material: "LIGHT_BLUE_WOOL"
-      display-name: "&91 hour"
-      description: "This grant will last for 1 hour."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.1h"
-    1d:
-      seconds: 86400
-      slot: 14
-      material: "YELLOW_WOOL"
-      display-name: "&91 day"
-      description: "This grant will last for 1 day."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.1d"
-    3d:
-      seconds: 259200
-      slot: 15
-      material: "LIME_WOOL"
-      display-name: "&93 days"
-      description: "This grant will last for 3 days."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.3d"
-    1w:
-      seconds: 604800
-      slot: 16
-      material: "PINK_WOOL"
-      display-name: "&91 week"
-      description: "This grant will last for 1 week."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.1w"
-    2w:
-      seconds: 1209600
-      slot: 17
-      material: "GRAY_WOOL"
-      display-name: "&92 weeks"
-      description: "This grant will last for 2 weeks."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.2w"
-    1mo:
-      seconds: 2419200
-      slot: 18
-      material: "LIGHT_GRAY_WOOL"
-      display-name: "&91 month"
-      description: "This grant will last for 1 month."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant duration."
-      permission-required: "grantx.duration.1mo"
+
 
 
 
 # The reason selection menu.
 reason-selection:
+  background-material: "GRAY_STAINED_GLASS_PANE"
   # The title of the GUI. Use %target% for the target's username.
   title: "&1Select a Reason"
   # The total number of slots in the GUI. Must be a multiple of 9, greater than 9, less than 54.
   slots: 18
+  # The lore that will be used if the staff member can use this reason (not dummy, has perms).
+  # %target% - The name of the player that is receiving the grant.
+  # %type% - Rank or Permission.
+  # %rank% - The display name of the rank or permission.
+  # %duration% - The display name of the duration.
+  # %expiry% - The expiry date of the grant.
+  # %reason% - The display name of the reason.
+  # %description% - The description of the reason.
+  # %dummy% - "Yes" or "No" depending on if you set dummy to true or false in reasons.yml.
+  # %permission% - The permission required to grant this reason.
+  lore:
+    - "&7&m-----------------------------------"
+    - "&a%description%"
+    - "&7&m-----------------------------------"
+    - "&b&lClick to select this grant reason."
   # The lore that will be used if the staff member does not have permission to choose that reason.
   dummy-lore:
     - "&7&m-----------------------------------"
     - "&6%description%"
     - "&7&m-----------------------------------"
     - "&c&lYou cannot select this reason."
-  # Reason presets. You can add/remove sections from this list to add/remove reasons.
-  # When adding, make sure you have enough slots, or the plugin will throw an error.
-  reasons:
-    # The button used to type a duration in chat / use a custom reason.
-    # For a button to be considered "custom reason", the configuration section name MUST be "custom-reason".
-    custom-reason:
-      # The slot where this button is located, must be from 1 to the "slots" configuration value above.
-      slot: 3
-      # The material of the button.
-      material: "GLISTERING_MELON_SLICE"
-      # The display name of the button.
-      display-name: "&9Custom Reason"
-      # The description of this duration. This will be used in the %description% placeholder.
-      description: "Type a custom reason in chat."
-      # The lore of this button.
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      # The permission required to use this button.
-      permission-required: "grantx.reason.custom"
-    # The button used to grant with no specified reason.
-    no-reason:
-      slot: 7
-      material: "REDSTONE_BLOCK"
-      display-name: "&9No Reason"
-      description: "Proceed to grant without a reason."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      permission-required: "grantx.reason.none"
-    buycraft-issues:
-      slot: 10
-      material: "WHITE_WOOL"
-      display-name: "&9BuyCraft Issues"
-      description: "BuyCraft failed to process this rank."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      permission-required: "grantx.reason.buycraft"
-    promotion:
-      slot: 11
-      material: "ORANGE_WOOL"
-      display-name: "&9Promotion"
-      description: "Player has been accepted as staff."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      permission-required: "grantx.reason.promotion"
-    demotion:
-      slot: 12
-      material: "MAGENTA_WOOL"
-      display-name: "&9Demotion"
-      description: "Player can no longer be staff."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      permission-required: "grantx.reason.demotion"
-    giveaway:
-      slot: 13
-      material: "LIGHT_BLUE_WOOL"
-      display-name: "&9Giveaway Winner"
-      description: "Player won a giveaway."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      permission-required: "grantx.reason.giveaway"
-    famous:
-      slot: 14
-      material: "YELLOW_WOOL"
-      display-name: "&9Famous"
-      description: "Player is well-known."
-      lore:
-        - "&7&m-----------------------------------"
-        - "&a%description%"
-        - "&7&m-----------------------------------"
-        - "&b&lClick to select this grant reason."
-      permission-required: "grantx.reason.famous"
 
-
+# The grant confirmation menu.
 grant-confirmation:
+  background-material: "GRAY_STAINED_GLASS_PANE"
+  # You can use the %target% placeholder.
   title: "&1Confirm Grant"
   slots: 45
+  # The confirm button.
   confirm:
+    # A LIST of slots that can be used.
     slots:
       - 11
       - 12
@@ -401,6 +195,24 @@ grant-confirmation:
       - 31
     material: "GREEN_TERRACOTTA"
     display-name: "&2Confirm Grant"
+    # You can use the following placeholders. Use common sense when using these.
+    # Example: Some things like %next-best-group% won't work for permission grants.
+    # %id% - The ID of the grant.
+    # %time% - The date of when the grant was issued.
+    # %target% - The username of the player receiving the grant.
+    # %target-uuid% - The UUID of the player receiving the grant.
+    # %staff% - The username of the staff member granting the grant.
+    # %staff-uuid% - The UUID of the staff member granting the grant.
+    # %type% - The type of the grant, Rank or Permission.
+    # %rank% - The name of the rank or permission.
+    # %real% - The group name of the rank or the permission node of the permission.
+    # %duration% - The duration of the grant, in words.
+    # %seconds% - The duration of the grant, in seconds.
+    # %expiry% - The date and time of grant expiry.
+    # %reason% - The reason for the grant.
+    # %next-best-group% - The next best rank's group name after the current one.
+    # %revoker% - The name of the staff who revoked the grant.
+    # %revoker-uuid% - The UUID of the staff who revoked the grant.
     lore:
       - "&7&m-----------------------------------"
       - "&aPlayer: &f%target%"
@@ -410,6 +222,7 @@ grant-confirmation:
       - "&aReason: &f%reason%"
       - "&7&m-----------------------------------"
       - "&b&lClick to confirm this grant."
+  # The cancel button.
   cancel:
     slots:
       - 15
@@ -423,6 +236,7 @@ grant-confirmation:
       - 35
     material: "RED_TERRACOTTA"
     display-name: "&4Cancel Grant"
+    # Same placeholders as the confirm button.
     lore:
       - "&7&m-----------------------------------"
       - "&6Player: &f%target%"
@@ -434,8 +248,10 @@ grant-confirmation:
       - "&c&lClick to cancel this grant."
 
 
+
 # This is the /grants grant history menu.
-grants:
+grant-history:
+  background-material: "GRAY_STAINED_GLASS_PANE"
   # The design of the grants GUI.
   # 1-  Allows pages of grants. There will be a control panel and a row of "separator" items that will split the grants
   #     from the controls (previous page, next page buttons).
@@ -447,7 +263,7 @@ grants:
   slots: 18
   # The range of slots which are dedicated to grants.
   # Make sure they don't collide with separator or page controls (if applicable)!
-  grants-slots:
+  usable-slots:
     from: 1
     to: 9
   separator:
@@ -478,25 +294,29 @@ grants:
   # This will be the icon of the grant if it is ACTIVE.
   active:
     material: "LIME_WOOL"
-    # You can use the following placeholders for BOTH NAME AND LORE:
+    # You can use the following placeholders. Use common sense when using these.
+    # Example: Some things like %next-best-group% won't work for permission grants.
     # %id% - The ID of the grant.
     # %time% - The date of when the grant was issued.
-    # %target% - The username of the player receiving the rank.
-    # %target-uuid% - The UUID of the player receiving the rank.
-    # %staff% - The username of the staff member granting the rank.
-    # %staff-uuid% - The UUID of the staff member granting the rank.
-    # %rank% - The name of the rank.
-    # %group% - The group name of the rank.
+    # %target% - The username of the player receiving the grant.
+    # %target-uuid% - The UUID of the player receiving the grant.
+    # %staff% - The username of the staff member granting the grant.
+    # %staff-uuid% - The UUID of the staff member granting the grant.
+    # %type% - The type of the grant, Rank or Permission.
+    # %rank% - The name of the rank or permission.
+    # %real% - The group name of the rank or the permission node of the permission.
     # %duration% - The duration of the grant, in words.
     # %seconds% - The duration of the grant, in seconds.
     # %expiry% - The date and time of grant expiry.
     # %reason% - The reason for the grant.
     # %next-best-group% - The next best rank's group name after the current one.
+    # %revoker% - The name of the staff who revoked the grant.
+    # %revoker-uuid% - The UUID of the staff who revoked the grant.
     display-name: "&2&l(Active) %time%"
     lore:
       - "&7&m-----------------------------------"
       - "&aID: &f%id%"
-      - "&aRank: &f%rank%"
+      - "&aRank: &f%rank% "
       - "&aDuration: &f%duration%"
       - "&aExpiry: &f%expiry%"
       - "&aReason: &f%reason%"
@@ -507,7 +327,7 @@ grants:
     dummy-lore:
       - "&7&m-----------------------------------"
       - "&aID: &f%id%"
-      - "&aRank: &f%rank%"
+      - "&aRank: &f%rank% (%type%)"
       - "&aDuration: &f%duration%"
       - "&aExpiry: &f%expiry%"
       - "&aReason: &f%reason%"
@@ -521,7 +341,7 @@ grants:
     lore:
       - "&7&m-----------------------------------"
       - "&eID: &f%id%"
-      - "&eRank: &f%rank%"
+      - "&eRank: &f%rank% (%type%)"
       - "&eDuration: &f%duration%"
       - "&eExpiry: &f%expiry%"
       - "&eReason: &f%reason%"
@@ -530,14 +350,11 @@ grants:
   # This will be the icon of the grant if it is REVOKED.
   revoked:
     material: "RED_WOOL"
-    # Special placeholders for name and lore:
-    # %revoker% - The name of the staff who revoked the grant.
-    # %revoker-uuid% - The UUID of the staff who revoked the grant.
     display-name: "&4&l(Revoked) %time%"
     lore:
       - "&7&m-----------------------------------"
       - "&cID: &f%id%"
-      - "&cRank: &f%rank%"
+      - "&cRank: &f%rank% (%type%)"
       - "&cDuration: &f%duration%"
       - "&cExpiry: &f%expiry%"
       - "&cReason: &f%reason%"
@@ -561,16 +378,16 @@ revoke-confirmation:
       - 30
       - 31
     material: "GREEN_TERRACOTTA"
-    display-name: "&4Confirm Revocation"
+    display-name: "&2Confirm Revocation"
     lore:
       - "&7&m-----------------------------------"
-      - "&6Player: &f%target%"
-      - "&6Rank: &f%rank%"
-      - "&6Duration: &f%duration%"
-      - "&6Expiry: &f%expiry%"
-      - "&6Reason: &f%reason%"
+      - "&aPlayer: &f%target%"
+      - "&aRank: &f%rank%"
+      - "&aDuration: &f%duration%"
+      - "&aExpiry: &f%expiry%"
+      - "&aReason: &f%reason%"
       - "&7&m-----------------------------------"
-      - "&c&lClick to confirm this revocation."
+      - "&b&lClick to confirm this revocation."
   cancel:
     slots:
       - 15
@@ -583,13 +400,13 @@ revoke-confirmation:
       - 34
       - 35
     material: "RED_TERRACOTTA"
-    display-name: "&2Cancel Revocation"
+    display-name: "&4Cancel Revocation"
     lore:
       - "&7&m-----------------------------------"
-      - "&aPlayer: &f%target%"
-      - "&aRank: &f%rank%"
-      - "&aDuration: &f%duration%"
-      - "&aExpiry: &f%expiry%"
-      - "&aReason: &f%reason%"
+      - "&6Player: &f%target%"
+      - "&6Rank: &f%rank%"
+      - "&6Duration: &f%duration%"
+      - "&6Expiry: &f%expiry%"
+      - "&6Reason: &f%reason%"
       - "&7&m-----------------------------------"
-      - "&b&lClick to cancel this revocation."
+      - "&c&lClick to cancel this revocation."

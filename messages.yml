@@ -10,12 +10,12 @@
 # ---------------------------------------------------------------------------------------
 # Welcome to the official messages file for GrantX!
 # This is where you can change how GrantX's messages look.
-# If you are unsure of what something does, see here: []
+# If you are unsure of what something does: https://demeng7215.com/grantx-docs
 # Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 4
+config-version: 5
 
 # The prefix that will appear in most of GrantX's messages.
 prefix: "&8[&9GrantX&8] &r"
@@ -25,7 +25,7 @@ prefix: "&8[&9GrantX&8] &r"
 # Prefix will not be used in this message.
 information:
   - "&9&m-----------------------------------------------------"
-  - "&b&lRunning GrantX by Demeng7215"
+  - "&b&lRunning GrantX v%version% by Demeng7215"
   - "&bLink: &fhttps://demeng7215.com/grantx"
   - "&bType &f/grantx help &bfor a list of commands."
   - "&bType &f/grant <player> &bto grant a rank."
@@ -66,13 +66,11 @@ invalid-player: "&f%target% &bhas never joined this server before."
 protected-player: "&bYou cannot interact with that user."
 
 # This message will be sent if an invalid or non-existing rank attempts to be force-granted.
-invalid-rank: "&bPlease specify a valid rank name."
+# Use %rank% for the rank's name.
+invalid-rank: "&f%rank% &bis not a valid rank."
 
 # The message that will be sent when all config files have been reloaded.
 successfully-reloaded: "&bAll configuration files reloaded. Data was NOT reloaded!"
-
-# This message will be sent if the reload has failed due to something being missing.
-reload-failed: "&bFailed to reload due to missing config values. Did you delete a required value?"
 
 # The message that will be send when data is forcibly saved.
 successfully-saved: "&bSaved data."
@@ -82,65 +80,63 @@ request-custom-duration: "&bPlease type your custom duration in chat."
 
 # This title will be sent to the player when they choose to enter a custom duration.
 # Split the title and subtitle with a semicolon (;).
-request-custom-duration-title: "&9Enter a Duration;&bType &fback &bto return."
+request-custom-duration-title: "&9Enter a Duration;&bLeft-click to cancel."
 
 # The message that is sent if a staff member provides an illegal custom duration like 'randomtext101'.
-invalid-custom-duration-format: "&bThat is not a valid duration."
+invalid-duration: "&bThat is not a valid duration."
 
 # This message will be sent when a player chooses to enter a custom reason.
 request-custom-reason: "&bPlease type your custom reason in chat."
 
 # This title will be sent to the player when they choose to enter a custom reason.
 # Split the title and subtitle with a semicolon (;).
-request-custom-reason-title: "&9Enter a Reason;&bType &fback &bto return."
+request-custom-reason-title: "&9Enter a Reason;&bLeft-click to cancel."
 
 # Notifications that will be sent to players on grant confirmation, when it expires, and when it is revoked.
 # You can set any of these to "none" if you do not want notifications for that event.
 # These messages are string lists, so you can easily make these messages multiple lines long.
 # Note that these messages do not use the plugin's prefix. You can add it manually if you wish.
-# You can use the following placeholders:
+# You can use the following placeholders. Use common sense when using these.
+# Example: Some things like %next-best-group% won't work for permission grants.
 # %id% - The ID of the grant.
 # %time% - The date of when the grant was issued.
-# %target% - The username of the player receiving the rank.
-# %target-uuid% - The UUID of the player receiving the rank.
-# %staff% - The username of the staff member granting the rank.
-# %staff-uuid% - The UUID of the staff member granting the rank.
-# %rank% - The name of the rank.
-# %group% - The group name of the rank.
+# %target% - The username of the player receiving the grant.
+# %target-uuid% - The UUID of the player receiving the grant.
+# %staff% - The username of the staff member granting the grant.
+# %staff-uuid% - The UUID of the staff member granting the grant.
+# %type% - The type of the grant, Rank or Permission.
+# %rank% - The name of the rank or permission.
+# %real% - The group name of the rank or the permission node of the permission.
 # %duration% - The duration of the grant, in words.
 # %seconds% - The duration of the grant, in seconds.
 # %expiry% - The date and time of grant expiry.
 # %reason% - The reason for the grant.
 # %next-best-group% - The next best rank's group name after the current one.
+# %revoker% - The name of the staff who revoked the grant.
+# %revoker-uuid% - The UUID of the staff who revoked the grant.
 notifications:
   # The messages that are sent to the target who has the grant.
   target:
     # On grant confirmation (when grant is activated).
     activation:
       - "&a&lYou were granted the &f&l%rank% &a&lrank!"
-    # On expiry, when duration runs out.
-    expiry:
+    # On expiration, when duration runs out.
+    expiration:
       - "&6&lYour &f&l%rank% &6&lrank has expired."
     # On revocation, when a staff member manually removes the grant.
-    # Special placeholders only for this notification:
-    # %revoker% - The name of the staff who revoked the grant.
-    # %revoker-uuid% - The UUID of the staff who revoked the grant.
     revocation:
       - "&c&lYour &f&l%rank% &c&lrank has been revoked by &f&l%revoker%&c&l."
   # The messages that are sent to the staff member who granted the rank.
   staff:
     activation:
       - "&8&m-----------------------------------------------------"
-      - "&b&lYou have granted &f&l%target% &b&lthe &f&l%rank% &b&lrank!"
+      - "&b&lYou granted &f&l%target% &b&lthe &f&l%rank% &b&lrank!"
       - "&3Duration: &7%duration%"
       - "&3Expiry: &7%expiry%"
       - "&3Reason: &7%reason%"
       - "&8&m-----------------------------------------------------"
-    expiry:
+    expiration:
       - "none"
-    # Special placeholders only for this notification:
-    # %revoker% - The name of the staff who revoked the grant.
-    # %revoker-uuid% - The UUID of the staff who revoked the grant.
     revocation:
       - "none"
 
@@ -152,22 +148,25 @@ revoke-cancelled: "&bGrant revocation has been successfully cancelled."
 
 # This message will be sent to the staff member who revoked the grant.
 # Unlike notifications, this is not sent to the original staff who granted the rank.
-# You may use the following placeholders:
+# This does not work if the player is offline (obviously).
+# You can use the following placeholders. Use common sense when using these.
+# Example: Some things like %next-best-group% won't work for permission grants.
 # %id% - The ID of the grant.
 # %time% - The date of when the grant was issued.
-# %target% - The username of the player receiving the rank.
-# %target-uuid% - The UUID of the player receiving the rank.
-# %staff% - The username of the staff member granting the rank.
-# %staff-uuid% - The UUID of the staff member granting the rank.
-# %rank% - The name of the rank.
-# %group% - The group name of the rank.
+# %target% - The username of the player receiving the grant.
+# %target-uuid% - The UUID of the player receiving the grant.
+# %staff% - The username of the staff member granting the grant.
+# %staff-uuid% - The UUID of the staff member granting the grant.
+# %type% - The type of the grant, Rank or Permission.
+# %rank% - The name of the rank or permission.
+# %real% - The group name of the rank or the permission node of the permission.
 # %duration% - The duration of the grant, in words.
 # %seconds% - The duration of the grant, in seconds.
 # %expiry% - The date and time of grant expiry.
 # %reason% - The reason for the grant.
+# %next-best-group% - The next best rank's group name after the current one.
 # %revoker% - The name of the staff who revoked the grant.
 # %revoker-uuid% - The UUID of the staff who revoked the grant.
-# %next-best-group% - The next best rank's group name after the current one.
 grant-revoked: "&bYou have revoked &f%target%&b's &f%rank% &brank."
 
 # The message that will be sent if "confirm" is not added after the /grantx import command.

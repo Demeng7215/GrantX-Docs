@@ -1,0 +1,122 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ________                     __    ____  ___  #
+#  /  _____/___________    _____/  |_  \   \/  /  #
+# /   \  __\_  __ \__  \  /    \   __\  \     /   #
+# \    \_\  \  | \// __ \|   |  \  |    /     \   #
+#  \______  /__|  (____  /___|  /__|   /___/\  \  #
+#         \/           \/     \/             \_/  #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# |
+# ---------------------------------------------------------------------------------------
+# Welcome to the official durations file for GrantX!
+# This is where you can change how durations appear and function.
+# If you are unsure of what something does: https://demeng7215.com/grantx-docs
+# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# Thank you for using GrantX!
+# ---------------------------------------------------------------------------------------
+
+config-version: 1
+
+# Duration presets. You can add/remove sections from this list to add/remove durations.
+# When adding, make sure you have enough slots, or the plugin will throw an error.
+durations:
+  # The button used to type a duration in chat / use a custom duration.
+  # For a button to be considered "custom duration", the configuration section name MUST be "custom-duration".
+  custom-duration:
+    # The amount of seconds this duration is worth. For example, 1 day would be 86400 seconds.
+    # Set this to -1 to read from custom duration (can be toggled later) or set as permanent.
+    seconds: -1
+    # The slot where this button is located, must be from 1 to the "slots" configuration value above.
+    slot: 3
+    # The material of the button.
+    material: "GLISTERING_MELON_SLICE"
+    # The display name of the button.
+    display-name: "&9Custom Duration"
+    # The description of this duration. This will be used in the %description% placeholder.
+    description: "Type a custom duration in chat."
+    # If this duration is actually usable or only for aesthetics.
+    dummy: false
+    # The permission required to use this button.
+    required-permission: "grantx.duration.custom"
+  # The button used to grant permanently.
+  permanent:
+    # This is set to -1 to mark this as permanent.
+    seconds: -1
+    slot: 7
+    material: "REDSTONE_BLOCK"
+    display-name: "&9Permanent"
+    description: "This grant will be permanent."
+    dummy: false
+    required-permission: "grantx.duration.permanent"
+  10s:
+    seconds: 10
+    slot: 10
+    material: "WHITE_WOOL"
+    display-name: "&910 seconds"
+    description: "This grant will last for 10 seconds."
+    dummy: false
+    required-permission: "grantx.duration.10s"
+  5m:
+    seconds: 300
+    slot: 11
+    material: "ORANGE_WOOL"
+    display-name: "&95 minutes"
+    description: "This grant will last for 5 minutes."
+    dummy: false
+    required-permission: "grantx.duration.5m"
+  30m:
+    seconds: 1800
+    slot: 12
+    material: "MAGENTA_WOOL"
+    display-name: "&930 minutes"
+    description: "This grant will last for 30 minutes."
+    dummy: false
+    required-permission: "grantx.duration.30m"
+  1h:
+    seconds: 3600
+    slot: 13
+    material: "LIGHT_BLUE_WOOL"
+    display-name: "&91 hour"
+    description: "This grant will last for 1 hour."
+    dummy: false
+    required-permission: "grantx.duration.1h"
+  1d:
+    seconds: 86400
+    slot: 14
+    material: "YELLOW_WOOL"
+    display-name: "&91 day"
+    description: "This grant will last for 1 day."
+    dummy: false
+    required-permission: "grantx.duration.1d"
+  3d:
+    seconds: 259200
+    slot: 15
+    material: "LIME_WOOL"
+    display-name: "&93 days"
+    description: "This grant will last for 3 days."
+    dummy: false
+    required-permission: "grantx.duration.3d"
+  1w:
+    seconds: 604800
+    slot: 16
+    material: "PINK_WOOL"
+    display-name: "&91 week"
+    description: "This grant will last for 1 week."
+    dummy: false
+    required-permission: "grantx.duration.1w"
+  2w:
+    seconds: 1209600
+    slot: 17
+    material: "GRAY_WOOL"
+    display-name: "&92 weeks"
+    description: "This grant will last for 2 weeks."
+    dummy: false
+    required-permission: "grantx.duration.2w"
+  1mo:
+    seconds: 2419200
+    slot: 18
+    material: "LIGHT_GRAY_WOOL"
+    display-name: "&91 month"
+    description: "This grant will last for 1 month."
+    dummy: false
+    required-permission: "grantx.duration.1mo"

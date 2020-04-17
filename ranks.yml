@@ -9,31 +9,39 @@
 # |
 # ---------------------------------------------------------------------------------------
 # Welcome to the official ranks file for GrantX!
-# This is where you can change how ranks appear in the GUIs.
-# If you are unsure of what something does, see here: []
+# This is where you can change how ranks and permissions appear and function.
+# If you are unsure of what something does: https://demeng7215.com/grantx-docs
 # Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 1
+config-version: 2
 
-# The list of ranks in the GUI.
+# The list of ranks and permissions in the GUI.
 ranks:
-  # This is an example rank. All other ranks should copy this template.
-  ExampleRank:
+  # This is an example rank. All other ranks or permissions should copy this template.
+  Example:
+    # The type of grantable, can be either RANK or PERMISSION.
+    type: RANK
     # Starts at 1, goes up to the GUI's last slot.
     # Set to -1 to not show this rank.
     # Set this to 0 for design type 1 and 2, to allow paging.
     slot: 0
-    # The display name of this rank in the GUIs and in chat messages.
-    display-name: "&c&lExample Rank"
-    # The name of the rank in your permissions plugin.
-    actual-group-name: "example"
-    # The material that represents this rank in the GUIs.
-    material-representation: "WHITE_WOOL"
-    # The rank's priority in the GUI. The lower the priority, the earlier it shows in the rank selection GUI.
-    priority-in-gui: 100
-    # If this rank is grantable or just for aesthetics in the GUI.
-    grantable: true
-    # The permission required to grant this rank.
-    permission-required-to-grant: "grant.examplerank"
+    # The display name of this rank/permission in the GUIs and in chat messages.
+    display-name: "&c&lExample"
+    # The name of the rank (group) in your permissions plugin.
+    # For permissions, this is the permission node.
+    real-name: "example"
+    # The description of the rank/perm, used in the %description% placeholder.
+    # By default, this is not shown. You can change that in style.yml.
+    description: "This is an example rank."
+    # The material that represents this rank/perm in the GUIs.
+    material: "WHITE_WOOL"
+    # The rank/perm's priority.
+    # The lower the priority, the earlier it shows in the rank selection GUI.
+    # This is also used to determine the %next-best-group% placeholder.
+    priority: 100
+    # If this rank/perm is actually usable or just for aesthetics in the GUI.
+    dummy: true
+    # The permission required to grant this rank/perm.
+    required-permission: "grant.examplerank"

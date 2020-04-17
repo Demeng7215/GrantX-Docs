@@ -1,0 +1,80 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ________                     __    ____  ___  #
+#  /  _____/___________    _____/  |_  \   \/  /  #
+# /   \  __\_  __ \__  \  /    \   __\  \     /   #
+# \    \_\  \  | \// __ \|   |  \  |    /     \   #
+#  \______  /__|  (____  /___|  /__|   /___/\  \  #
+#         \/           \/     \/             \_/  #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# |
+# ---------------------------------------------------------------------------------------
+# Welcome to the official reasons file for GrantX!
+# This is where you can change how reasons appear and function.
+# If you are unsure of what something does: https://demeng7215.com/grantx-docs
+# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# Thank you for using GrantX!
+# ---------------------------------------------------------------------------------------
+
+config-version: 1
+
+# Reason presets. You can add/remove sections from this list to add/remove reasons.
+# When adding, make sure you have enough slots, or the plugin will throw an error.
+reasons:
+  # The button used to type a reason in chat / use a custom reason.
+  # For a button to be considered "custom reason", the configuration section name MUST be "custom-reason".
+  custom-reason:
+    # The slot where this button is located, must be from 1 to the "slots" configuration value above.
+    slot: 3
+    # The material of the button.
+    material: "GLISTERING_MELON_SLICE"
+    # The display name of the button.
+    display-name: "&9Custom Reason"
+    # The description of this duration. This will be used in the %description% placeholder.
+    description: "Type a custom reason in chat."
+    # If this reason is actually usable or only for aesthetics.
+    dummy: false
+    # The permission required to use this button.
+    required-permission: "grantx.reason.custom"
+  # The button used to grant with no specified reason.
+  no-reason:
+    slot: 7
+    material: "REDSTONE_BLOCK"
+    display-name: "&9No Reason"
+    description: "Proceed to grant without a reason."
+    dummy: false
+    required-permission: "grantx.reason.none"
+  buycraft-issues:
+    slot: 10
+    material: "WHITE_WOOL"
+    display-name: "&9BuyCraft Issues"
+    description: "BuyCraft failed to process this rank."
+    dummy: false
+    required-permission: "grantx.reason.buycraft"
+  promotion:
+    slot: 11
+    material: "ORANGE_WOOL"
+    display-name: "&9Promotion"
+    description: "Player has been accepted as staff."
+    dummy: false
+    required-permission: "grantx.reason.promotion"
+  demotion:
+    slot: 12
+    material: "MAGENTA_WOOL"
+    display-name: "&9Demotion"
+    description: "Player can no longer be staff."
+    dummy: false
+    required-permission: "grantx.reason.demotion"
+  giveaway:
+    slot: 13
+    material: "LIGHT_BLUE_WOOL"
+    display-name: "&9Giveaway Winner"
+    description: "Player won a giveaway."
+    dummy: false
+    required-permission: "grantx.reason.giveaway"
+  famous:
+    slot: 14
+    material: "YELLOW_WOOL"
+    display-name: "&9Famous"
+    description: "Player is well-known."
+    dummy: false
+    required-permission: "grantx.reason.famous"
