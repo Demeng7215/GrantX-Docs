@@ -97,6 +97,6 @@
 
 ## Code 20
 **Description:** Something related to MySQL. </br>
-**Cause:** There was an issue whilst connecting, loading, or saving MySQL.
-**Effect:** Plugin will either disable or fail to save data properly.
+**Cause:** There was an issue whilst connecting, loading, or saving MySQL. </br>
+**Effect:** Plugin will either disable or fail to save data properly. </br>
 **Fix:** Make sure your credentials are correct and GrantX has permission to access the database.
