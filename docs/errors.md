@@ -90,7 +90,13 @@
 **Fix:** Usually re-downloading will fix the issue, but if it doesn't, contact Demeng.
 
 ## Code 19
-**Description:** Failed to check for updates </br>
-**Cause:** Invalid/blocked internet connection whilst checking for updates </br>
+**Description:** Failed to check for updates. </br>
+**Cause:** Invalid/blocked internet connection whilst checking for updates. </br>
 **Effect:** Nothing, the issue is ignored. </br>
 **Fix:** Ignore (not recommended) or fix internet.
+
+## Code 20
+**Description:** Something related to MySQL. </br>
+**Cause:** There was an issue whilst connecting, loading, or saving MySQL.
+**Effect:** Plugin will either disable or fail to save data properly.
+**Fix:** Make sure your credentials are correct and GrantX has permission to access the database.
