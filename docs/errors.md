@@ -100,3 +100,9 @@
 **Cause:** There was an issue whilst connecting, loading, or saving MySQL. </br>
 **Effect:** Plugin will either disable or fail to save data properly. </br>
 **Fix:** Make sure your credentials are correct and GrantX has permission to access the database.
+
+## Code 21
+**Description:** Could not get player name from UUID. </br>
+**Cause:** You deleted a player's player data from your world/server and their username could no longer be retrieved.
+**Effect:** Plugin will disable.
+**Fix:** Get the player with the mentioned UUID to join the server once, delete their data from data.yml or your database, or just completely delete your data.yml or table to reset all data.
