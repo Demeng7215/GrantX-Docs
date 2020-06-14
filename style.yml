@@ -10,8 +10,8 @@
 # ---------------------------------------------------------------------------------------
 # Welcome to the official styling file for GrantX!
 # This is where you can change how GrantX's GUIs appear in-game.
-# If you are unsure of what something does: https://demeng7215.com/grantx-docs
-# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# If you are unsure of what something does: https://demeng.dev/grantx/docs
+# Stuck? Getting errors? Contact out support team at https://demeng.dev/discord.
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
@@ -195,10 +195,7 @@ grant-confirmation:
       - 31
     material: "GREEN_TERRACOTTA"
     display-name: "&2Confirm Grant"
-    # You can use the following placeholders. Use common sense when using these.
-    # Example: Some things like %next-best-group% won't work for permission grants.
-    # %id% - The ID of the grant.
-    # %time% - The date of when the grant was issued.
+    # You can use the following placeholders.
     # %target% - The username of the player receiving the grant.
     # %target-uuid% - The UUID of the player receiving the grant.
     # %staff% - The username of the staff member granting the grant.
@@ -210,9 +207,6 @@ grant-confirmation:
     # %seconds% - The duration of the grant, in seconds.
     # %expiry% - The date and time of grant expiry.
     # %reason% - The reason for the grant.
-    # %next-best-group% - The next best rank's group name after the current one.
-    # %revoker% - The name of the staff who revoked the grant.
-    # %revoker-uuid% - The UUID of the staff who revoked the grant.
     lore:
       - "&7&m-----------------------------------"
       - "&aPlayer: &f%target%"

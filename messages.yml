@@ -10,12 +10,12 @@
 # ---------------------------------------------------------------------------------------
 # Welcome to the official messages file for GrantX!
 # This is where you can change how GrantX's messages look.
-# If you are unsure of what something does: https://demeng7215.com/grantx-docs
-# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# If you are unsure of what something does: https://demeng.dev/grantx/docs
+# Stuck? Getting errors? Contact out support team at https://demeng.dev/discord.
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 5
+config-version: 6
 
 # The prefix that will appear in most of GrantX's messages.
 prefix: "&8[&9GrantX&8] &r"
@@ -25,8 +25,8 @@ prefix: "&8[&9GrantX&8] &r"
 # Prefix will not be used in this message.
 information:
   - "&9&m-----------------------------------------------------"
-  - "&b&lRunning GrantX v%version% by Demeng7215"
-  - "&bLink: &fhttps://demeng7215.com/grantx"
+  - "&b&lRunning GrantX v%version% by Demeng"
+  - "&bLink: &fhttps://demeng.dev/grantx"
   - "&bType &f/grantx help &bfor a list of commands."
   - "&bType &f/grant <player> &bto grant a rank."
   - "&9&m-----------------------------------------------------"
@@ -38,7 +38,6 @@ help-menu:
   - "&b/grantx &7- &fDisplays plugin info and some basic commands."
   - "&b/grantx help &7- &fShows a list of GrantX commands."
   - "&b/grantx reload &7- &fReloads all configuration files."
-  - "&b/grantx save &7- &fForcibly save data to file."
   - "&b/grantx import &7- &fImport ranks from your permissions plugin."
   - "&b/grant <player> &7- &fGrant player a rank or permission."
   - "&b/grants <player> &7- &fView player's grants and revoke them."
@@ -72,9 +71,6 @@ invalid-rank: "&f%rank% &bis not a valid rank."
 # The message that will be sent when all config files have been reloaded.
 successfully-reloaded: "&bAll configuration files reloaded. Data was NOT reloaded!"
 
-# The message that will be send when data is forcibly saved.
-successfully-saved: "&bSaved data."
-
 # The message that is sent when a player chooses to enter a custom duration.
 request-custom-duration: "&bPlease type your custom duration in chat."
 
@@ -91,6 +87,9 @@ request-custom-reason: "&bPlease type your custom reason in chat."
 # This title will be sent to the player when they choose to enter a custom reason.
 # Split the title and subtitle with a semicolon (;).
 request-custom-reason-title: "&9Enter a Reason;&bLeft-click to cancel."
+
+# The message that is sent after grants is requested and GrantX starts getting the target's grant history.
+retrieving-grants: "&bRetrieving grants of &f%target%&b. This may take some time..."
 
 # Notifications that will be sent to players on grant confirmation, when it expires, and when it is revoked.
 # You can set any of these to "none" if you do not want notifications for that event.
@@ -174,3 +173,6 @@ import-not-confirmed: "&bImporting resets your current ranks.yml. Make a backup 
 
 # This message will be sent when ranks have been successfully imported into the ranks.yml from your permissions plugin.
 ranks-imported: "&bYour ranks have been successfully imported."
+
+# The message that is sent when a force grant is executed.
+force-grant-success: "&bRank has been forcibly granted."

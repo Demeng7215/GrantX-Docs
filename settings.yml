@@ -10,19 +10,20 @@
 # ---------------------------------------------------------------------------------------
 # Welcome to the official settings file for GrantX!
 # This is where you can change how GrantX functions.
-# If you are unsure of what something does: https://demeng7215.com/grantx-docs
-# Stuck? Getting errors? Contact out support team at https://demeng7215.com/discord.
+# If you are unsure of what something does: https://demeng.dev/grantx/docs
+# Stuck? Getting errors? Contact out support team at https://demeng.dev/discord.
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 4
+config-version: 6
 
 # Your license key, required to activate GrantX.
-# Go to https://demeng7215.com/discord and create a ticket to obtain one.
-# IF YOU DOWNLOADED FROM SPIGOT, IGNORE. This is already done automatically.
-license-key: "null"
+# Go to https://demeng.dev/discord and create a ticket to obtain one.
+# IF YOU DOWNLOADED FROM SPIGOT, IGNORE. This is already automatically done internally.
+license-key: "NONE"
 
-# The list of commands that will be executed on rank grant, expiry, and revocation.
+# The list of commands that will be executed on rank/permission grant, expiry, and revocation.
+# Not reloaded during /grantx reload.
 # Do not include the / sign in front of the command.
 # Dependent on your permissions plugin. NOTHING WILL HAPPEN on these events if your commands are incorrect!
 # You can use the following placeholders. Use common sense when using these.
@@ -44,24 +45,34 @@ license-key: "null"
 # %revoker% - The name of the staff who revoked the grant.
 # %revoker-uuid% - The UUID of the staff who revoked the grant.
 commands-executed-on:
-  grant:
-    - "Not Set"
-  expiry:
-    - "Not Set"
-  revoke:
-    - "Not Set"
+  rank:
+    grant:
+      - "Not Set"
+    expiry:
+      - "Not Set"
+    revoke:
+      - "Not Set"
+  permission:
+    grant:
+      - "Not Set"
+    expiry:
+      - "Not Set"
+    revoke:
+      - "Not Set"
 
 # If GrantX should check for updates and new releases.
 check-for-updates: true
 
-# The number of seconds between each grants save.
-# Setting this to a small number could result in lag!
-# Setting this to a large number could result in data loss in an event of a server crash!
-# 180 is the recommended default.
-save-interval: 180
+# The number of TICKS between every grant expiry check.
+# Not reloaded during /grantx reload.
+# Assume 20 ticks = 1 second.
+# Setting this to a low number will result in more accurate expiration times, but will be more resource-intensive.
+# Generally no one really cares if their 5 minute rank is 5 minutes and 10 seconds, which is why 200 is the default.
+# You may want to lower this if you often "troll" players and want to give 2 second ranks, etc.
+expiry-check-interval: 200
 
 # The default rank on join and the fallback rank when %next-best-group% is requested but there isn't one.
-# This should be an actual rank, not a permission.
+# This must be an actual rank, not a permission.
 default-grant:
   # Should this feature be enabled?
   enabled: false
