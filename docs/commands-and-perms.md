@@ -12,10 +12,6 @@
 **Description:** Reloads configuration files.</br>
 **Permission:** grantx.reload
 
-### /grantx save
-**Description:** Forcibly saves grants data.</br>
-**Permission:** grantx.save
-
 ### /grantx import
 **Description:** Imports ranks from your permissions plugin into GrantX's ranks.yml.</br>
 **Permission:** grantx.import
@@ -47,6 +43,9 @@
 
 ### grantx.grants.revoke
 **Description:** Ability to revoke grants in /grants.
+
+### grantx.bypass-protection
+**Description:** Ability to grant or view grants of a protected user.
 </br>
 
 ## Custom Permissions
