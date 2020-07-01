@@ -1,0 +1,55 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ________                     __    ____  ___  #
+#  /  _____/___________    _____/  |_  \   \/  /  #
+# /   \  __\_  __ \__  \  /    \   __\  \     /   #
+# \    \_\  \  | \// __ \|   |  \  |    /     \   #
+#  \______  /__|  (____  /___|  /__|   /___/\  \  #
+#         \/           \/     \/             \_/  #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# |
+# ---------------------------------------------------------------------------------------
+# Welcome to the official servers file for GrantX!
+# This is where you can change how servers appear and function.
+# Ignore this if you are not using Bungee and disabled the server selection menu in style.yml.
+# If you are unsure of what something does: https://demeng.dev/grantx/docs
+# Stuck? Getting errors? Contact out support team at https://demeng.dev/discord.
+# Thank you for using GrantX!
+# ---------------------------------------------------------------------------------------
+
+config-version: 1
+
+# Server presets. You can add/remove sections from this list to add/remove servers.
+# When adding, make sure you have enough slots, or the plugin will throw an error.
+servers:
+  # This is used to grant GLOBALLY.
+  # The normal "grant" commands from commands-executed-on will be used.
+  # DO NOT REMOVE THIS OPTION! Set slot to -1 if you don't want it.
+  global:
+    # The slot where this button is located, must be from 1 to the GUI size in style.yml.
+    slot: 1
+    # The material of the button.
+    material: "WHITE_WOOL"
+    # Should the button glow (look enchanted)?
+    glow: false
+    # The display name of the button.
+    display-name: "&9Global"
+    # The actual name of the server- used in the %server% placeholder.
+    real-name: "global"
+    # The description of this duration. This will be used in the %description% placeholder.
+    description: "Grant on all servers."
+    # If this reason is actually usable or only for aesthetics.
+    dummy: false
+    # The permission required to use this button.
+    required-permission: "grantx.grant"
+
+  # This is an example of how you would implement a new server.
+  # Remove the # in front of each line to use.
+  #survival:
+    #slot: 2
+    #material: "DIRT"
+    #glow: false
+    #display-name: "&9Survival"
+    #real-name: "survival"
+    #description: "Grant only on Survival."
+    #dummy: false
+    #required-permission: "grantx.server.survival"

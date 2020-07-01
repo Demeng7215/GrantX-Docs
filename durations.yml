@@ -26,10 +26,12 @@ durations:
     # The amount of seconds this duration is worth. For example, 1 day would be 86400 seconds.
     # Set this to -1 to read from custom duration (can be toggled later) or set as permanent.
     seconds: -1
-    # The slot where this button is located, must be from 1 to the "slots" configuration value above.
+    # The slot where this button is located, must be from 1 to the GUI size in style.yml.
     slot: 3
     # The material of the button.
     material: "GLISTERING_MELON_SLICE"
+    # Should the button glow (look enchanted)?
+    glow: false
     # The display name of the button.
     display-name: "&9Custom Duration"
     # The description of this duration. This will be used in the %description% placeholder.
@@ -44,6 +46,7 @@ durations:
     seconds: -1
     slot: 7
     material: "REDSTONE_BLOCK"
+    glow: false
     display-name: "&9Permanent"
     description: "This grant will be permanent."
     dummy: false
@@ -52,6 +55,7 @@ durations:
     seconds: 10
     slot: 10
     material: "WHITE_WOOL"
+    glow: false
     display-name: "&910 seconds"
     description: "This grant will last for 10 seconds."
     dummy: false
@@ -60,6 +64,7 @@ durations:
     seconds: 300
     slot: 11
     material: "ORANGE_WOOL"
+    glow: false
     display-name: "&95 minutes"
     description: "This grant will last for 5 minutes."
     dummy: false
@@ -68,6 +73,7 @@ durations:
     seconds: 1800
     slot: 12
     material: "MAGENTA_WOOL"
+    glow: false
     display-name: "&930 minutes"
     description: "This grant will last for 30 minutes."
     dummy: false
@@ -76,6 +82,7 @@ durations:
     seconds: 3600
     slot: 13
     material: "LIGHT_BLUE_WOOL"
+    glow: false
     display-name: "&91 hour"
     description: "This grant will last for 1 hour."
     dummy: false
@@ -84,6 +91,7 @@ durations:
     seconds: 86400
     slot: 14
     material: "YELLOW_WOOL"
+    glow: false
     display-name: "&91 day"
     description: "This grant will last for 1 day."
     dummy: false
@@ -92,6 +100,7 @@ durations:
     seconds: 259200
     slot: 15
     material: "LIME_WOOL"
+    glow: false
     display-name: "&93 days"
     description: "This grant will last for 3 days."
     dummy: false
@@ -100,6 +109,7 @@ durations:
     seconds: 604800
     slot: 16
     material: "PINK_WOOL"
+    glow: false
     display-name: "&91 week"
     description: "This grant will last for 1 week."
     dummy: false
@@ -108,6 +118,7 @@ durations:
     seconds: 1209600
     slot: 17
     material: "GRAY_WOOL"
+    glow: false
     display-name: "&92 weeks"
     description: "This grant will last for 2 weeks."
     dummy: false
@@ -116,6 +127,7 @@ durations:
     seconds: 2419200
     slot: 18
     material: "LIGHT_GRAY_WOOL"
+    glow: false
     display-name: "&91 month"
     description: "This grant will last for 1 month."
     dummy: false

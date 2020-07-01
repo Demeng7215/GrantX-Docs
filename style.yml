@@ -55,6 +55,8 @@ rank-selection:
     slot: 37
     # The material/item that will be the button.
     material: "LIME_DYE"
+    # Should the button glow (look enchanted)?
+    glow: false
     # The display name of the button.
     display-name: "&c&lPrevious Page"
     # The lore of the button.
@@ -64,6 +66,7 @@ rank-selection:
   # Only applies to design types 1 and 2.
   dummy-back:
     material: "GRAY_DYE"
+    glow: false
     display-name: "&c&lYou are on the first page."
     lore:
       - "&7There are no more pages to return to."
@@ -72,6 +75,7 @@ rank-selection:
   next:
     slot: 45
     material: "LIME_DYE"
+    glow: false
     display-name: "&a&lNext Page"
     lore:
       - "&7Go to the next page."
@@ -79,6 +83,7 @@ rank-selection:
   # Only applies to design types 1 and 2.
   dummy-next:
     material: "GRAY_DYE"
+    glow: false
     display-name: "&a&lYou are on the last page."
     lore:
       - "&7There are no more pages to advance to."
@@ -112,6 +117,35 @@ rank-selection:
     - "&c&lYou cannot grant this rank."
 
 
+# The server selection menu.
+server-selection:
+  background-material: "GRAY_STAINED_GLASS_PANE"
+  # The title of the GUI. Use %target% for the target's username.
+  title: "&1Select a Server"
+  # The total number of slots in the GUI. Must be a multiple of 9, greater than 9, less than 54.
+  slots: 9
+  # The lore that will be used if the staff member is able to choose this server. Placeholders:
+  # %target% - The name of the player that is receiving the rank.
+  # %type% - Rank or Permission.
+  # %rank% - The display name of the rank or permission.
+  # %server-name% - The display name of the server. "Global" if the grant is global.
+  # %server% - The real name of the server. "global" if the grant is global.
+  # %description% - The description of the duration.
+  # %dummy% - "Yes" or "No" depending on if you set dummy to true or false in durations.yml.
+  # %permission% - The permission required to grant this duration.
+  lore:
+    - "&7&m-----------------------------------"
+    - "&a%description%"
+    - "&7&m-----------------------------------"
+    - "&b&lClick to select this server."
+  # The lore that will be used if the staff member does not have permission to choose that server or it is dummy.
+  # Same placeholders as above.
+  dummy-lore:
+    - "&7&m-----------------------------------"
+    - "&6%description%"
+    - "&7&m-----------------------------------"
+    - "&c&lYou cannot select this server."
+
 
 # The duration selection menu.
 duration-selection:
@@ -124,6 +158,8 @@ duration-selection:
   # %target% - The name of the player that is receiving the rank.
   # %type% - Rank or Permission.
   # %rank% - The display name of the rank or permission.
+  # %server-name% - The display name of the server. "Global" if the grant is global.
+  # %server% - The real name of the server. "global" if the grant is global.
   # %duration% - The display name of the duration.
   # %expiry% - The expiry date of the grant.
   # %description% - The description of the duration.
@@ -156,6 +192,8 @@ reason-selection:
   # %target% - The name of the player that is receiving the grant.
   # %type% - Rank or Permission.
   # %rank% - The display name of the rank or permission.
+  # %server-name% - The display name of the server. "Global" if the grant is global.
+  # %server% - The real name of the server. "global" if the grant is global.
   # %duration% - The display name of the duration.
   # %expiry% - The expiry date of the grant.
   # %reason% - The display name of the reason.
@@ -195,6 +233,7 @@ grant-confirmation:
       - 31
     material: "GREEN_TERRACOTTA"
     display-name: "&2Confirm Grant"
+    glow: false
     # You can use the following placeholders.
     # %target% - The username of the player receiving the grant.
     # %target-uuid% - The UUID of the player receiving the grant.
@@ -203,6 +242,8 @@ grant-confirmation:
     # %type% - The type of the grant, Rank or Permission.
     # %rank% - The name of the rank or permission.
     # %real% - The group name of the rank or the permission node of the permission.
+    # %server-name% - The display name of the server. "Global" if the grant is global.
+    # %server% - The real name of the server. "global" if the grant is global.
     # %duration% - The duration of the grant, in words.
     # %seconds% - The duration of the grant, in seconds.
     # %expiry% - The date and time of grant expiry.
@@ -229,6 +270,7 @@ grant-confirmation:
       - 34
       - 35
     material: "RED_TERRACOTTA"
+    glow: false
     display-name: "&4Cancel Grant"
     # Same placeholders as the confirm button.
     lore:
@@ -266,22 +308,26 @@ grant-history:
   back:
     slot: 10
     material: "LIME_DYE"
+    glow: false
     display-name: "&c&lPrevious Page"
     lore:
       - "&7Return to the previous page."
   dummy-back:
     material: "GRAY_DYE"
+    glow: false
     display-name: "&c&lYou are on the first page."
     lore:
       - "&7There are no more pages to return to."
   next:
     slot: 18
     material: "LIME_DYE"
+    glow: false
     display-name: "&a&lNext Page"
     lore:
       - "&7Go to the next page."
   dummy-next:
     material: "GRAY_DYE"
+    glow: false
     display-name: "&a&lYou are on the last page."
     lore:
       - "&7There are no more pages to advance to."
@@ -299,6 +345,8 @@ grant-history:
     # %type% - The type of the grant, Rank or Permission.
     # %rank% - The name of the rank or permission.
     # %real% - The group name of the rank or the permission node of the permission.
+    # %server-name% - The display name of the server. "Global" if the grant is global.
+    # %server% - The real name of the server. "global" if the grant is global.
     # %duration% - The duration of the grant, in words.
     # %seconds% - The duration of the grant, in seconds.
     # %expiry% - The date and time of grant expiry.
@@ -307,6 +355,7 @@ grant-history:
     # %revoker% - The name of the staff who revoked the grant.
     # %revoker-uuid% - The UUID of the staff who revoked the grant.
     display-name: "&2&l(Active) %time%"
+    glow: false
     lore:
       - "&7&m-----------------------------------"
       - "&aID: &f%id%"
@@ -331,6 +380,7 @@ grant-history:
   # This will be the icon of the grant if it is EXPIRED.
   expired:
     material: "ORANGE_WOOL"
+    glow: false
     display-name: "&6&l(Expired) %time%"
     lore:
       - "&7&m-----------------------------------"
@@ -344,6 +394,7 @@ grant-history:
   # This will be the icon of the grant if it is REVOKED.
   revoked:
     material: "RED_WOOL"
+    glow: false
     display-name: "&4&l(Revoked) %time%"
     lore:
       - "&7&m-----------------------------------"
@@ -372,6 +423,7 @@ revoke-confirmation:
       - 30
       - 31
     material: "GREEN_TERRACOTTA"
+    glow: false
     display-name: "&2Confirm Revocation"
     lore:
       - "&7&m-----------------------------------"
@@ -394,6 +446,7 @@ revoke-confirmation:
       - 34
       - 35
     material: "RED_TERRACOTTA"
+    glow: false
     display-name: "&4Cancel Revocation"
     lore:
       - "&7&m-----------------------------------"

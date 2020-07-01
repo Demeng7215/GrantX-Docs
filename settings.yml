@@ -15,7 +15,7 @@
 # Thank you for using GrantX!
 # ---------------------------------------------------------------------------------------
 
-config-version: 6
+config-version: 7
 
 # Your license key, required to activate GrantX.
 # Go to https://demeng.dev/discord and create a ticket to obtain one.
@@ -37,6 +37,8 @@ license-key: "NONE"
 # %type% - The type of the grant, Rank or Permission.
 # %rank% - The name of the rank or permission.
 # %real% - The group name of the rank or the permission node of the permission.
+# %server-name% - The display name of the server. "Global" if the grant is global.
+# %server% - The real name of the server. "global" if the grant is global.
 # %duration% - The duration of the grant, in words.
 # %seconds% - The duration of the grant, in seconds.
 # %expiry% - The date and time of grant expiry.
@@ -45,31 +47,46 @@ license-key: "NONE"
 # %revoker% - The name of the staff who revoked the grant.
 # %revoker-uuid% - The UUID of the staff who revoked the grant.
 commands-executed-on:
-  rank:
-    grant:
-      - "Not Set"
-    expiry:
-      - "Not Set"
-    revoke:
-      - "Not Set"
-  permission:
-    grant:
-      - "Not Set"
-    expiry:
-      - "Not Set"
-    revoke:
-      - "Not Set"
+  # These commands are used for global grants.
+  global:
+    # These commands are used for rank grants.
+    rank:
+      # Commands executed on grant activation.
+      grant:
+        - "Not Set"
+      # Commands executed on grant expiration.
+      expiry:
+        - "Not Set"
+      # Commands executed on grant revocation.
+      revoke:
+        - "Not Set"
+    # These commands are used for permission grants.
+    permission:
+      grant:
+        - "Not Set"
+      expiry:
+        - "Not Set"
+      revoke:
+        - "Not Set"
+  # These commands are used for per-server grants.
+  per-server:
+    rank:
+      grant:
+        - "Not Set"
+      expiry:
+        - "Not Set"
+      revoke:
+        - "Not Set"
+    permission:
+      grant:
+        - "Not Set"
+      expiry:
+        - "Not Set"
+      revoke:
+        - "Not Set"
 
-# If GrantX should check for updates and new releases.
+# If GrantX should check for updates and new releases at startup.
 check-for-updates: true
-
-# The number of TICKS between every grant expiry check.
-# Not reloaded during /grantx reload.
-# Assume 20 ticks = 1 second.
-# Setting this to a low number will result in more accurate expiration times, but will be more resource-intensive.
-# Generally no one really cares if their 5 minute rank is 5 minutes and 10 seconds, which is why 200 is the default.
-# You may want to lower this if you often "troll" players and want to give 2 second ranks, etc.
-expiry-check-interval: 200
 
 # The default rank on join and the fallback rank when %next-best-group% is requested but there isn't one.
 # This must be an actual rank, not a permission.
@@ -87,6 +104,18 @@ default-grant:
 # All users listed here cannot be granted and cannot have their grant history viewed.
 protected-users:
   - "ca19af04-a156-482e-a35d-3f5f434975b5"
+
+# Should GrantX move the user's cursor to the center of the screen when switching between menus?
+# Turn this on if your menus are glitching.
+reset-cursor: false
+
+# The number of TICKS between every grant expiry check.
+# Not reloaded during /grantx reload.
+# Assume 20 ticks = 1 second.
+# Setting this to a low number will result in more accurate expiration times, but will be more resource-intensive.
+# Generally no one really cares if their 5 minute rank is 5 minutes and 10 seconds, which is why 200 is the default.
+# You may want to lower this if you often "troll" players and want to give 2 second ranks, etc.
+expiry-check-interval: 200
 
 # How the messages logged in the grant log files should be formatted.
 # You can use the following placeholders. Use common sense when using these.
@@ -119,6 +148,8 @@ log-format:
 strip-placeholder-colors:
   # For %rank% placeholder.
   ranks: true
+  # For the %server-name% placeholder.
+  servers: true
   # For %duration% placeholder.
   durations: true
   # For %reason% placeholder.

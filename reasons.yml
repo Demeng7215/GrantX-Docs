@@ -23,10 +23,12 @@ reasons:
   # The button used to type a reason in chat / use a custom reason.
   # For a button to be considered "custom reason", the configuration section name MUST be "custom-reason".
   custom-reason:
-    # The slot where this button is located, must be from 1 to the "slots" configuration value above.
+    # The slot where this button is located, must be from 1 to the GUI size in style.yml.
     slot: 3
     # The material of the button.
     material: "GLISTERING_MELON_SLICE"
+    # Should the button glow (look enchanted)?
+    glow: false
     # The display name of the button.
     display-name: "&9Custom Reason"
     # The description of this duration. This will be used in the %description% placeholder.
@@ -39,6 +41,7 @@ reasons:
   no-reason:
     slot: 7
     material: "REDSTONE_BLOCK"
+    glow: false
     display-name: "&9No Reason"
     description: "Proceed to grant without a reason."
     dummy: false
@@ -46,6 +49,7 @@ reasons:
   buycraft-issues:
     slot: 10
     material: "WHITE_WOOL"
+    glow: false
     display-name: "&9BuyCraft Issues"
     description: "BuyCraft failed to process this rank."
     dummy: false
@@ -53,6 +57,7 @@ reasons:
   promotion:
     slot: 11
     material: "ORANGE_WOOL"
+    glow: false
     display-name: "&9Promotion"
     description: "Player has been accepted as staff."
     dummy: false
@@ -60,6 +65,7 @@ reasons:
   demotion:
     slot: 12
     material: "MAGENTA_WOOL"
+    glow: false
     display-name: "&9Demotion"
     description: "Player can no longer be staff."
     dummy: false
@@ -67,6 +73,7 @@ reasons:
   giveaway:
     slot: 13
     material: "LIGHT_BLUE_WOOL"
+    glow: false
     display-name: "&9Giveaway Winner"
     description: "Player won a giveaway."
     dummy: false
@@ -74,6 +81,7 @@ reasons:
   famous:
     slot: 14
     material: "YELLOW_WOOL"
+    glow: false
     display-name: "&9Famous"
     description: "Player is well-known."
     dummy: false
