@@ -2,7 +2,7 @@
 
 ## Prerequisites
 * Java 8 or above.
-* Spigot or a Spigot-forked JAR such as Paper/TacoSpigot running anywhere between MC 1.8.x-1.15.x.
+* Spigot or a Spigot-forked JAR such as Paper/TacoSpigot running anywhere between MC 1.8.x-1.16.x.
 * Basic knowledge on how to operate Minecraft servers.
 
 ## Dependencies
